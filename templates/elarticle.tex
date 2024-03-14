@@ -1,0 +1,98 @@
+% Load packages {{{
+%\documentclass[numbers,sort&compress, 5p, times, final]{elsarticle}
+\documentclass[numbers,sort&compress,times,review,3p,12pt]{elsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\definecolor{BlueHTML}{RGB}{0, 102, 204}
+\usepackage[colorlinks=true,
+            linkcolor=BlueHTML,
+            urlcolor=BlueHTML,
+            anchorcolor=BlueHTML,
+            citecolor=BlueHTML]{hyperref}
+\usetikzlibrary{shapes.geometric,arrows}
+\usepackage[cmex10]{amsmath}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage[subfolder,shell]{gnuplottex}
+\usepackage{subfig}
+\usepackage[capitalise]{cleveref}
+\usepackage{multirow}
+\usepackage{soul}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{lineno}
+% }}}
+
+% Title and authors {{{
+%Title
+\title{Full title}
+%Authors
+\author[1]{David Hernandez-Aristizabal\corref{cor1}}
+\ead{david.hernandez-aristizabal@univ-amu.fr}
+%
+\author[2]{Second author}
+\ead{e-mail}
+%Authors information
+\cortext[cor1]{Corresponding author\\
+E-mail: \\
+Address:
+}
+\address[1]{Aix--Marseille Univ, CNRS, ISM, Marseille, France}
+\address[2]{"Institution name"}
+\nonumnote{Declarations of interest: none}
+% }}}
+
+% Line numbers {{{
+\makeatletter
+\@ifclasswith{elsarticle}{review}{\linenumbers}{}
+\makeatother
+% }}}
+
+\begin{document}
+
+% New commands {{{
+% Delete elsevier footnote
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+% New colors
+% For eps images
+\epstopdfsetup{outdir=./}
+% }}}
+
+% Abstract and keywords {{{
+\begin{abstract}
+    \begin{linenumbers}
+    Write abstract
+    \end{linenumbers}
+\end{abstract}
+%Key Words
+\begin{keyword}
+    first kw \sep second kw \sep so on ...
+\end{keyword}
+% }}}
+
+\maketitle
+\linenumbers
+
+% Introduction {{{
+\section{Introduction}
+% }}}
+
+% Bibliography {{{
+\bibliographystyle{apalike}
+\bibliography{"Reference file name.bib"}
+% }}}
+
+\end{document}
