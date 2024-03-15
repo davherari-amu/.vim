@@ -251,6 +251,14 @@ function GetStartAndEndLines()
     return line_limits
 endfunction
 " }}}
+" Restore session {{{
+" From https://stackoverflow.com/questions/5142099/how-to-auto-save-vim-session-on-quit-and-auto-reload-on-start-including-split-wi
+fu! RestoreSess()
+if filereadable(getcwd() . '/.session.vim')
+    execute 'so ' . getcwd() . '/.session.vim'
+endif
+endfunction
+" }}}
 " }}}
 
 " Set mappings {{{
@@ -382,4 +390,8 @@ augroup TexSettings
     autocmd Filetype tex call IUNMAP("FEM", "tex")
     autocmd Filetype tex call IUNMAP("{{", "tex")
 augroup END
+" }}}
+
+" Auto commands {{{
+autocmd VimEnter * call RestoreSess()
 " }}}
