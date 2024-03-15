@@ -279,11 +279,14 @@ nnoremap <leader>qq :q<cr>
 " New tab
 nnoremap <leader>tt :tabnew<cr>
 " Source vimrc
-nnoremap <leader>so :source ~/.vimrc<cr>
+nnoremap <leader>so :source ~/.vim/vimrc<cr>
 " Arrange current sentence
 nnoremap <leader>ss :call ArrangeCurrentSentece()<cr>
 " Undo tree toggle
 nnoremap <leader>ut :UndotreeToggle<cr>
+" Git gutter
+nmap <leader>gn <Plug>(GitGutterNextHunk)
+nmap <leader>gp <Plug>(GitGutterPrevHunk)
 "}}}
 
 " Plugin settings {{{
