@@ -1,3 +1,3 @@
 Language tool
-- Version: 6.2
+- Version: 5.2
 - [https://languagetool.org/download/](https://languagetool.org/download/)
