@@ -324,8 +324,7 @@ autocmd BufRead * normal zM
 " }}}
 
 " LanguageTool settings {{{
-" let g:languagetool_jar='$HOME/opt/languagetool/languagetool-standalone/target/LanguageTool-6.4-SNAPSHOT/LanguageTool-6.4-SNAPSHOT/languagetool-commandline.jar'
-let g:languagetool_jar='$HOME/opt/LanguageTool-5.2/languagetool-commandline.jar'
+let g:languagetool_jar='$HOME/opt/languagetool/languagetool-commandline.jar'
 let g:languagetool_disable_rules='COMMA_PARENTHESIS_WHITESPACE,EN_QUOTES,EN_UNPAIRED_BRACKETS,WORD_CONTAINS_UNDERSCORE,CURRENCY,WHITESPACE_RULE,DASH_RULE,UNIT_SPACE'
 " }}}
 
