@@ -116,6 +116,9 @@ call plug#begin()
     Plug 'jiangmiao/auto-pairs'
     Plug 'mbbill/undotree'
     Plug 'glepnir/dashboard-nvim'
+    Plug 'ludovicchabant/vim-gutentags'
+    Plug 'ap/vim-css-color'
+    Plug 'PatrBal/vim-textidote'
 call plug#end()
 " }}}
 
@@ -281,6 +284,7 @@ nnoremap <leader>el :call ExecuteRunShLatex(runLatex)<cr><cr>
 " fzf-vim maps
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fb :Buffers<cr>
+nnoremap <leader>rg :Rg<cr>
 " Quit and save
 nnoremap <leader>ww :w<cr>
 nnoremap <leader>qq :q<cr>
@@ -295,6 +299,14 @@ nnoremap <leader>ut :UndotreeToggle<cr>
 " Git gutter
 nmap <leader>gn <Plug>(GitGutterNextHunk)
 nmap <leader>gp <Plug>(GitGutterPrevHunk)
+nmap <leader>gu <Plug>(GitGutterUndoHunk)
+" Tabular
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t: :Tabularize /:\zs<CR>
+vmap <Leader>t: :Tabularize /:\zs<CR>
+nmap <Leader>t, :Tabularize /,/r0l1<CR>
+vmap <Leader>t, :Tabularize /,/r0l1<CR>
 "}}}
 
 " Plugin settings {{{
@@ -323,9 +335,11 @@ autocmd BufRead * setlocal foldmethod=marker
 autocmd BufRead * normal zM
 " }}}
 
-" LanguageTool settings {{{
+" Language settings {{{
 let g:languagetool_jar='$HOME/opt/languagetool/languagetool-commandline.jar'
 let g:languagetool_disable_rules='COMMA_PARENTHESIS_WHITESPACE,EN_QUOTES,EN_UNPAIRED_BRACKETS,WORD_CONTAINS_UNDERSCORE,CURRENCY,WHITESPACE_RULE,DASH_RULE,UNIT_SPACE'
+
+let g:textidote_jar = '$HOME/opt/textidote/textidote.jar'
 " }}}
 
 " csv settings {{{
